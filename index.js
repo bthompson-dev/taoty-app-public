@@ -9,11 +9,10 @@ const Album = require("./models/album");
 
 const PORT = process.env.PORT;
 
-app.use(express.static('build'));
+app.use(express.static("build"));
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
-
 
 app.get("/api/albums", (request, response) => {
   let year = request.headers.year;

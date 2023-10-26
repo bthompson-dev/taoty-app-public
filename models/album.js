@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const url = process.env.MONGODB_URI;
 
@@ -15,18 +15,17 @@ const albumSchema = new mongoose.Schema({
   winner: Boolean,
 });
 
-const Album = mongoose.model("Album", albumSchema)
+const Album = mongoose.model("Album", albumSchema);
 
-console.log("connecting to", url)
+console.log("connecting to", url);
 
-mongoose.connect(url)
-    .then((result) => {
-        console.log("connected to MongoDB");
-        })
-    .catch((error) => {
-        console.log("error connecting to MongoDB: ", error.message);
-    })
-
-
+mongoose
+  .connect(url)
+  .then((result) => {
+    console.log("connected to MongoDB");
+  })
+  .catch((error) => {
+    console.log("error connecting to MongoDB: ", error.message);
+  });
 
 module.exports = Album;
